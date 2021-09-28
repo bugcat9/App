@@ -24,9 +24,9 @@ jobs:
           PASSWORD: ${{ secrets.PASSWORD }}
           ALIAS: ${{ secrets.ALIAS }}
         run: |
-          sed -i "1s/123/PASSWORD/" keystore.properties
-          sed -i "2s/123/PASSWORD/" keystore.properties
-          sed -i "3s/123/ALIAS/" keystore.properties
+          sed -i "1s/123/$PASSWORD/" keystore.properties
+          sed -i "2s/123/$PASSWORD/" keystore.properties
+          sed -i "3s/123/$ALIAS/" keystore.properties
           bash ./gradlew assembleRelease
 
       #step：上传apk 到action，在右上角查看
